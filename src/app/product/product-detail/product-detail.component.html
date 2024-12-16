@@ -1,0 +1,174 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-12 col-md-4 main">
+      <img
+        src="images/products/detail/JeaneDarc.webp"
+        alt=""
+        class="img-fluid"
+        style="height: 500px; object-fit: contain"
+      />
+      <div class="row mt-3 variant">
+        <div class="col-3">
+          <img
+            src="images/products/detail/JeaneDarc_Lancer.webp"
+            alt=""
+            class="img-fluid"
+            style="width: 100px; height: 100px; object-fit: contain"
+          />
+        </div>
+        <div class="col-3 variant">
+          <img
+            src="images/products/detail/JeaneDarc_Alter.webp"
+            alt=""
+            class="img-fluid"
+            style="width: 100px; height: 100px; object-fit: contain"
+          />
+        </div>
+        <div class="col-3 variant">
+          <img
+            src="images/products/detail/JeaneDarc.webp"
+            alt=""
+            class="img-fluid"
+            style="width: 100px; height: 100px; object-fit: contain"
+          />
+        </div>
+        <div class="col-3 variant">
+          <img
+            src="images/products/detail/JeaneDarc_Lancer_Santa.webp"
+            alt=""
+            class="img-fluid"
+            style="width: 100px; height: 100px; object-fit: contain"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-8">
+      <h3>Product Name</h3>
+      <p>Class: Saber</p>
+      <p>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+        <i class="bi bi-star-fill" style="color: gold"></i>
+      </p>
+      <p>Price: $100</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        dolor voluptatem doloribus quibusdam eum ad eius reiciendis est
+        repellat, culpa quaerat porro necessitatibus, saepe molestiae aliquid
+        fugiat cumque at quo.
+      </p>
+      <p>Noble Phantasm</p>
+      <ul>
+        <li>Avalon</li>
+        <li>Excalibur</li>
+        <li>Invisible Air</li>
+      </ul>
+      <hr />
+      <div class="input-group" style="width: 150px">
+        <button class="btn btn-primary" type="button" id="button-minus">
+          <b>-</b>
+        </button>
+        <input
+          class="form-control text-center"
+          type="number"
+          min="1"
+          value="1"
+        />
+        <button class="btn btn-primary" type="button" id="button-plus">
+          <b>+</b>
+        </button>
+      </div>
+      <br />
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-4">
+        <p class="fluid">
+          <button
+            id="btn-lore"
+            class="legend btn btn-secondary w-100"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#lore"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            Lore
+          </button>
+        </p>
+      </div>
+
+      <div class="col-4">
+        <p>
+          <button
+            id="btn-skill"
+            class="legend btn btn-secondary w-100"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#skill"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+            Personal Skill
+          </button>
+        </p>
+      </div>
+
+      <div class="col-4">
+        <p>
+          <button
+            id="btn-np"
+            class="legend btn btn-secondary w-100"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#np"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+            Noble Phantasm
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="collapse" id="lore">
+          <div class="card card-body">
+            This is some placeholder content for a horizontal collapse. It's
+            hidden by default and shown when triggered.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="collapse" id="skill">
+          <div class="card card-body">
+            Some placeholder content for the collapse component. This panel is
+            hidden by default but revealed when the user activates the relevant
+            trigger.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="collapse" id="np">
+          <div class="card card-body">
+            Some placeholder content for the collapse component. This panel is
+            hidden by default but revealed when the user activates the relevant
+            trigger.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

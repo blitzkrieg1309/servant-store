@@ -1,0 +1,264 @@
+<app-header></app-header>
+<div class="container mt-3">
+  <h3 class="text-center">Servant List</h3>
+  <div class="row mt-5">
+    <!-- Filter -->
+    <div class="col-md-3">
+      <h5>Filters</h5>
+      <hr />
+      <div class="filter">
+        <label for="star-filter"><h6>Filter by Star Rating: &nbsp;</h6></label>
+        <select id="star-filter" class="form-select">
+          <option value="all">All</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars & Up</option>
+          <option value="3">3 Stars & Up</option>
+          <option value="2">2 Stars & Up</option>
+          <option value="1">1 Star & Up</option>
+        </select>
+      </div>
+      <br />
+      <div class="filter">
+        <label for="class-filter"><h6>Filter by Class: &nbsp;</h6></label>
+        <select id="class-filter" class="form-select">
+          <option value="all">All</option>
+          <option value="saber">Saber</option>
+          <option value="archer">Archer</option>
+          <option value="lancer">Lancer</option>
+          <option value="rider">Rider</option>
+          <option value="caster">Caster</option>
+          <option value="assassin">Assassin</option>
+          <option value="berserker">Berserker</option>
+          <option value="ruler">Ruler</option>
+        </select>
+      </div>
+      <br />
+      <div class="filter">
+        <label for="price-filter"><h6>Filter by Price: &nbsp;</h6></label>
+        <div id="price-filter" class="form-check">
+          <input
+            type="radio"
+            id="price-all"
+            name="price"
+            value="all"
+            class="form-check-input"
+            checked
+          />
+          <label for="price-all" class="form-check-label">All</label><br />
+          <input
+            type="radio"
+            id="price-0-50"
+            name="price"
+            value="0-50"
+            class="form-check-input"
+          />
+          <label for="price-0-50" class="form-check-label">$0 - $50</label
+          ><br />
+          <input
+            type="radio"
+            id="price-51-100"
+            name="price"
+            value="51-100"
+            class="form-check-input"
+          />
+          <label for="price-51-100" class="form-check-label">$51 - $100</label
+          ><br />
+          <input
+            type="radio"
+            id="price-101-200"
+            name="price"
+            value="101-200"
+            class="form-check-input"
+          />
+          <label for="price-101-200" class="form-check-label">$101 - $200</label
+          ><br />
+          <input
+            type="radio"
+            id="price-201-500"
+            name="price"
+            value="201-500"
+            class="form-check-input"
+          />
+          <label for="price-201-500" class="form-check-label">$201 - $500</label
+          ><br />
+          <input
+            type="radio"
+            id="price-501"
+            name="price"
+            value="501"
+            class="form-check-input"
+          />
+          <label for="price-501" class="form-check-label">$501 & Above</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="col-md-9">
+      <div class="row">
+        <!-- Pagination -->
+        <div class="col-4">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search for Servants..."
+              aria-label="Search"
+            />
+          </form>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- Produclist -->
+
+      <div class="card-container justify-content-center">
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 180px">
+          <img
+            src="/images/products/BestServant1.webp"
+            class="card-img-top"
+            style="object-fit: contain"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Jeanne D arc</h5>
+            <p class="card-text">Class : Ruler</p>
+            <p class="card-text">$300</p>
+            <a class="btn btn-secondary">add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!--Pagination  -->
+    </div>
+    <div class="row mt-3">
+      <div class="col d-flex justify-content-end">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

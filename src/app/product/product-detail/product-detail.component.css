@@ -1,0 +1,8 @@
+.variant {
+  transition: transform 0.3s ease-in-out;
+}
+
+.variant:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
