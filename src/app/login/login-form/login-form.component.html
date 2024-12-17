@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<div class="login-container">
+  <ul class="nav nav-pills mb-3 justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="/login">LOGIN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/register">REGISTER</a>
+    </li>
+  </ul>
+
+  <h5 class="text-center mb-4">Sign in with:</h5>
+  <div class="social-icons text-center mb-3">
+    <a href="#"><i class="bi bi-facebook"></i></a>
+    <a href="#"><i class="bi bi-google"></i></a>
+    <a href="#"><i class="bi bi-twitter"></i></a>
+    <a href="#"><i class="bi bi-github"></i></a>
+  </div>
+  <p class="text-center">or:</p>
+
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="email" class="mb-3">Email or username</label>
+      <input
+        type="email"
+        class="form-control mb-3"
+        id="email"
+        [(ngModel)]="loginData.email"
+        placeholder="Enter email or username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password" class="mb-3">Password</label>
+      <input
+        type="password"
+        class="form-control mb-3"
+        id="password"
+        [(ngModel)]="loginData.password"
+        placeholder="Enter password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
+  </form>
+
+  <p class="text-center mt-3">Not a member? <a href="/register">Register</a></p>
+</div>
+
+<!-- Indikator Loading -->
+<div *ngIf="isLoading" class="text-center mt-3">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<!-- Pesan Error -->
+<div *ngIf="errorMessages" class="alert alert-danger mt-3">
+  {{ errorMessages }}
+</div>
+
+<app-footer></app-footer>

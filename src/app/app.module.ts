@@ -11,6 +11,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { CheckoutComponent } from './checkout/checkout/checkout.component';
+import { HeaderLoginComponent } from './template/header-login/header-login.component';
+import { HeaderAdminComponent } from './template/header-admin/header-admin.component';
+import { LoginFormComponent } from './login/login-form/login-form.component';
+import { RegisFormComponent } from './login/regis-form/regis-form.component';
+import { UserComponent } from './user/user/user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +29,14 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
     HeaderComponent,
     FooterComponent,
     ProductDetailComponent,
+    CheckoutComponent,
+    HeaderLoginComponent,
+    HeaderAdminComponent,
+    LoginFormComponent,
+    RegisFormComponent,
+    UserComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

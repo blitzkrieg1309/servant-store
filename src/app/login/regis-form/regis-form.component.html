@@ -1,0 +1,124 @@
+<app-header></app-header>
+
+<div class="register-container mt-5 mb-5">
+  <ul class="nav nav-pills mb-3 justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/login">LOGIN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/register">REGISTER</a>
+    </li>
+  </ul>
+
+  <h5 class="text-center mb-4">Create Your Account</h5>
+
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <!-- Username -->
+    <div class="form-group">
+      <label for="username" class="mb-2">Username</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        id="username"
+        name="username"
+        [(ngModel)]="registerData.username"
+        required
+        minlength="3"
+      />
+      <div
+        *ngIf="registerForm.submitted && !registerData.username"
+        class="text-danger"
+      >
+        Username is required (min 3 characters).
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email" class="mb-2">Email</label>
+      <input
+        type="email"
+        class="form-control mb-2"
+        id="email"
+        name="email"
+        [(ngModel)]="registerData.email"
+        required
+      />
+      <div
+        *ngIf="registerForm.submitted && !registerData.email"
+        class="text-danger"
+      >
+        Valid email is required.
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password" class="mb-2">Password</label>
+      <input
+        type="password"
+        class="form-control mb-2"
+        id="password"
+        name="password"
+        [(ngModel)]="registerData.password"
+        required
+        minlength="6"
+      />
+      <div
+        *ngIf="registerForm.submitted && !registerData.password"
+        class="text-danger"
+      >
+        Password must be at least 6 characters.
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirm-password" class="mb-2">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control mb-2"
+        id="confirm-password"
+        name="confirmPassword"
+        [(ngModel)]="registerData.confirmPassword"
+        required
+      />
+      <div
+        *ngIf="
+          registerForm.submitted &&
+          registerData.password !== registerData.confirmPassword
+        "
+        class="text-danger"
+      >
+        Passwords do not match.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-primary btn-block"
+      [disabled]="!registerForm.valid"
+    >
+      REGISTER
+    </button>
+  </form>
+
+  <!-- Indikator Loading -->
+  <div *ngIf="isLoading" class="text-center mt-3">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+
+  <p class="text-center mt-3">
+    Already have an account? <a href="/login">Login</a>
+  </p>
+</div>
+
+<app-footer></app-footer>
