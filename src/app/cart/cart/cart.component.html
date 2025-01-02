@@ -5,10 +5,10 @@
   <h3 class="text-center mt-4">Your Cart</h3>
   <div class="row justify-content-md-center mt-5">
     <div class="col-lg-8 mb-4">
-      <h5>Cart - 2 items</h5>
+      <h5>Cart - {{ cartItems.length }} items</h5>
       <hr />
       <!-- item 1 -->
-      <div class="row">
+      <div class="row" *ngFor="let item of cartItems">
         <div class="col-12 col-md-4 mb-3">
           <img
             src="images/products/detail/JeaneDarc.webp"
@@ -19,90 +19,57 @@
         </div>
         <div class="col-12 col-md-5 mb-3">
           <div class="p-2">
-            <h6>Jeane D Arc</h6>
-            <p>Class: Ruler</p>
+            <h6>{{ item.product.name }}</h6>
+            <p>
+              <ng-container
+                *ngFor="let start of [].constructor(item.product.star)"
+              >
+                ⭐
+              </ng-container>
+            </p>
+            <p>Class: {{ item.product.class }}</p>
             <p>Noble Phantasm</p>
             <ul>
-              <li>Luminosité Eternelle: God is Here With Me</li>
-              <li>La Pucelle: The Crimson Holy Virgin</li>
+              <li>{{ item.product.noble_phantasm }}</li>
             </ul>
           </div>
         </div>
-        <div class="col-12 col-md-3 mb-3">
-          <div class="input-group">
-            <button class="btn btn-primary" type="button" id="button-minus">
-              <b>-</b>
-            </button>
-            <input
-              class="form-control text-center"
-              type="number"
-              min="1"
-              value="1"
-            />
-            <button class="btn btn-primary" type="button" id="button-plus">
-              <b>+</b>
-            </button>
-          </div>
+        <div class="col-12 col-md-3">
+          <p class="text-end">
+            <b>{{ item.quantity }} pcs</b>
+          </p>
         </div>
-      </div>
-      <!-- Item 2 -->
-      <div class="row">
-        <div class="col-12 col-md-4 mb-3">
-          <img
-            src="images/products/detail/ArtoriaPendragon.webp"
-            alt=""
-            class="img-fluid"
-            style="height: 300px; object-fit: contain"
-          />
-        </div>
-        <div class="col-12 col-md-5 mb-3">
-          <div class="p-2">
-            <h6>Product Name</h6>
-            <p>Class: Saber</p>
-            <p>Noble Phantasm</p>
-            <ul>
-              <li>Avalon</li>
-              <li>Excalibur</li>
-              <li>Invisible Air</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-md-3 mb-3">
-          <div class="input-group">
-            <button class="btn btn-primary" type="button" id="button-minus">
-              <b>-</b>
-            </button>
-            <input
-              class="form-control text-center"
-              type="number"
-              min="1"
-              value="1"
-            />
-            <button class="btn btn-primary" type="button" id="button-plus">
-              <b>+</b>
-            </button>
-          </div>
+        <div class="text-end">
+          <p>
+            Price :<b>
+              {{ item.product.price * item.quantity | currency : "USD" }}
+            </b>
+          </p>
+          <a class="btn btn-secondary" (click)="deleteCartItem(item.product_id)"
+            >remove</a
+          >
         </div>
       </div>
     </div>
-    <div class="col-lg-4">
-      <h5>Summary</h5>
-      <hr />
-      <div class="row">
-        <div class="col-8">Products</div>
-        <div class="col-4 text-end">$100</div>
-      </div>
-      <div class="row">
-        <div class="col-8">Shipping</div>
-        <div class="col-4 text-end">Gratis</div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-8"><h6>Total Amount</h6></div>
-        <div class="col-4 text-end">$100</div>
-      </div>
-      <a class="btn btn-primary w-100 mt-4" href="#">CHECKOUT</a>
+    <!-- Item 2 -->
+  </div>
+  <div class="col-lg-4">
+    <h5>Summary</h5>
+    <hr />
+    <div class="row">
+      <div class="col-8">Products</div>
+      <div class="col-4 text-end">{{ totalPrices | currency : "USD" }}</div>
     </div>
+    <div class="row">
+      <div class="col-8">Shipping</div>
+      <div class="col-4 text-end">Gratis</div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-8"><h6>Total Amount</h6></div>
+      <div class="col-4 text-end">{{ totalPrices | currency : "USD" }}</div>
+    </div>
+    <a class="btn btn-primary w-100 mt-4" (click)="checkout()">CHECKOUT</a>
   </div>
 </div>
 

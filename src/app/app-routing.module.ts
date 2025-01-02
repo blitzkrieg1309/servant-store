@@ -9,19 +9,24 @@ import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { RegisFormComponent } from './login/regis-form/regis-form.component';
 import { UserComponent } from './user/user/user.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'servants', component: ProductListComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'admin', component: AdminDashboardComponent },
-  { path: 'products/:productId', component: ProductDetailComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'servants/:productId', component: ProductDetailComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginFormComponent },
   { path: 'register', component: RegisFormComponent },
-  { path: 'user', component: UserComponent },
-  // { path: '**', redirectTo: '/home' },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
